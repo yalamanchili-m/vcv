@@ -1,5 +1,5 @@
 #fifo
-def fifo_page_replacement(page_reference_string, num_frames):
+def fifo(page_reference_string, num_frames):
     frames = []
     page_faults = 0
     for page in page_reference_string:
@@ -15,7 +15,7 @@ def fifo_page_replacement(page_reference_string, num_frames):
 
 page_reference_string = [7, 0, 1, 2, 0, 3, 0, 4, 2, 3]
 num_frames = 3
-page_faults = fifo_page_replacement(page_reference_string, num_frames)
+page_faults = fifo(page_reference_string, num_frames)
 print(f"Total page faults: {page_faults}")
 
 #lru
@@ -42,3 +42,4 @@ page_reference_string = [7, 0, 1, 2, 0, 3, 0, 4, 2, 3]
 num_frames = 3
 page_faults = lru_page_replacement(page_reference_string, num_frames)
 print(f"Total page faults: {page_faults}")
+
