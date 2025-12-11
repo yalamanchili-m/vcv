@@ -1,0 +1,59 @@
+mkdir — create a directory
+Creates a new directory in the filesystem.
+mkdir myfolder
+
+link — create a hard link
+Creates another directory entry (name) for an existing file.
+ln file1.txt link_to_file1
+
+unlink — delete a file
+Removes a directory entry; file is deleted when no links remain.
+unlink file1.txt
+
+mount — attach a filesystem
+Mounts a filesystem (e.g., USB, disk partition) to a directory so it can be accessed.
+sudo mount /dev/sdb1 /mnt
+
+umount — detach a filesystem
+Un-mounts a previously mounted filesystem.
+sudo umount /mnt
+
+users — show logged-in users
+Displays the usernames of users currently logged into the system.
+users
+
+chown — change file owner
+Changes the owner or group of a file or directory.
+sudo chown user1 file.txt
+
+chmod — change permissions
+Modifies read, write, and execute permissions of files/directories.
+chmod 755 file.txt
+
+open — open a file (system call)
+System call used by programs to open a file and return a file descriptor.
+int fd = open("file.txt", O_RDONLY);
+
+close — close a file
+Releases the file descriptor after use.
+close(fd);
+
+read — read data from a file
+Reads bytes from a file descriptor into a buffer.
+read(fd, buffer, sizeof(buffer));
+
+write — write data to a file
+Writes bytes from a buffer to a file descriptor.
+write(fd, "Hello", 5);
+
+lseek — move file pointer
+Moves the read/write pointer within a file.
+lseek(fd, 0, SEEK_SET);
+
+stat — get file information
+Retrieves metadata about a file (permissions, owner, size, etc.).
+stat("file.txt", &info);
+
+sync — flush buffers to disk
+Writes all in-memory data and filesystem metadata to disk.
+sync

@@ -1,0 +1,39 @@
+1. fork()
+Creates a new process (child). Child gets a copy of parent’s memory.
+pid_t pid = fork();
+
+2. wait()
+Parent process waits for child to finish and collects its exit status.
+wait(NULL);
+
+3. exec()
+Replaces the current process image with a new program.
+execl("/bin/ls", "ls", NULL);
+
+4. exit()
+Terminates the current process and returns a status code to the parent.
+exit(0);
+
+5. getpid()
+Returns the Process ID (PID) of the calling process.
+printf("PID = %d", getpid());
+
+6. getuid()
+Returns the real User ID of the calling process.
+printf("UID = %d", getuid());
+
+7. setuid()
+Sets (changes) the user ID of a process. Only root can change UID.
+setuid(1000);
+
+8. brk() / sbrk()
+Changes the end of the data segment (heap). Used for dynamic memory allocation.
+sbrk(4096);   
+
+9. nice()
+Changes process priority (niceness value). Higher value → lower priority.
+nice -n 5 ./a.out
+
+10. sleep()
+Suspends the process for a specified number of seconds.
+sleep(2); 
