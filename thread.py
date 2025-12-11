@@ -19,17 +19,15 @@ print("Both threads have finished.")
 
 #program2
 import threading
-import time
-shared_counter = 0
-def increment_counter():
-    global shared_counter
-    for _ in range(100000):
-        shared_counter += 1  
-threads = []
-for i in range(10):
-    thread = threading.Thread(target=increment_counter)
-    threads.append(thread)
-    thread.start()
-for thread in threads:
-    thread.join()
-print(f"Final shared_counter value: {shared_counter}")
+count = 0
+def inc():
+    global count
+    for _ in range(1000):
+        count += 1
+t1 = threading.Thread(target=inc)
+t2 = threading.Thread(target=inc)
+t1.start()
+t2.start()
+t1.join()
+t2.join()
+print(count)
